@@ -1,30 +1,42 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="wrapper">
+    <div id="nav">
+      <router-link class="nav-item" to="/">Home</router-link>
+      <router-link class="nav-item" to="/about">About</router-link>
+      <router-link class="nav-item" to="/diretivas">Diretivas</router-link>
+    </div>
+    <div id="main">
+      <router-view/>  
+    </div>
   </div>
-  <router-view/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<style scoped>
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  #wrapper {
+    display: flex;
+    justify-content: space-between;
   }
-}
+
+  #nav {
+    width: 150px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--primary);
+    padding: 10px;
+  }
+
+  .nav-item {
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 10px 0;
+  }
+
+  #main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+   }
 </style>
